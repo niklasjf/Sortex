@@ -1,0 +1,30 @@
+﻿@model SortexAdminV._1.ViewModels.BrandImagesUploadViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Lägg till Bilder</h1>
+<form asp-action="Create" asp-controller="BrandImages" method="post" enctype="multipart/form-data">
+    @for (int i = 0; i < @ViewBag.NumberOfImages; i++)
+    {
+        <p class="line"></p>
+        <div class="form-group col-md-6">
+            <label for="formFile" class="form-label">Lägg till bilder</label>
+            <input class="form-control" type="file" id="formFile" name="files">
+            <p></p>
+            <label for="Description" class="form-label">Lägg till kommentar</label>
+            <input class="form-control" type="text" id="Description" rows="4" name="imageDescriptions">
+        </div>
+    }
+    <input type="hidden" value="@ViewBag.BrandId" asp-for="BrandId" />
+    <div class="form-group">
+        <input type="submit" value="Lägg till" class="btn btn-primary" />
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Brands">Tillbaka</a>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

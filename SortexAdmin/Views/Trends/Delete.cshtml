@@ -1,0 +1,21 @@
+﻿@model SortexAdminV._1.Models.Trend
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Radera @Model.Season</h1>
+<h3>Är du säker på att du vill radera trenden @Model.Season?</h3>
+<div class="card w-100">
+    <h4 class="card-img-top text-center text-black font-weight-bold pt-2 pb-1">@Model.Season</h4>
+    <div class="card-body border-light">
+        <h5 class="card-title">Beskrivning</h5>
+        <p class="card-text">@Model.Description</p>
+        <p class="line"></p>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Radera" class="btn btn-danger" />
+            <a class="btn btn-primary" asp-action="Index">Tillbaka</a>
+        </form>
+    </div>
+</div>

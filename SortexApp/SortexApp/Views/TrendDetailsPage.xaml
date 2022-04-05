@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SortexApp.Views.TrendDetailsPage"
+              xmlns:vm="clr-namespace:SortexApp.Models"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+    
+    <ContentPage.BindingContext>
+        <vm:TrendImageView />
+    </ContentPage.BindingContext>
+    
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="sortexiconblue.png"  VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" BackgroundColor="{StaticResource Background}" HorizontalOptions="CenterAndExpand">
+
+
+                <StackLayout Padding="10">
+                    <flv:FlowListView FlowColumnCount="3"
+                                      SeparatorVisibility="Default"
+                                      HasUnevenRows="True"
+                                      FlowItemsSource="{Binding TrendImages}"
+                                      >
+
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal"   >
+
+                                    <StackLayout WidthRequest="250" HeightRequest="400" HorizontalOptions="Center" >
+                                        <Image x:Name="imgMain" Source="{Binding Image}" HorizontalOptions="Center"></Image>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+                    </flv:FlowListView>
+                </StackLayout>
+
+
+
+
+                <!--<flv:FlowListView FlowItemsSource="{Binding TrendImages}" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="False">
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="{StaticResource Background}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image x:Name="imgMain" Source="{Binding Image}" Grid.Row="0" Grid.ColumnSpan="2" WidthRequest="250" HeightRequest="500"></Image>
+                                
+                            </Grid>
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+                </flv:FlowListView>-->
+
+                <!--<CollectionView x:Name="collectionView" ItemsSource="{Binding TrendImages}" HeightRequest="200" ItemsLayout="HorizontalList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="Auto">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="imgMain" Grid.RowSpan="1" Grid.Column="1" Source="{Binding Image}" WidthRequest="200" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>-->
+
+                <!--<CarouselView ItemsSource="{Binding TrendImages}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame>
+                                    <StackLayout>
+                                        <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="200" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>    
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>-->
+                <!--<ListView ItemsSource="{Binding TrendImages}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Transparent" Padding="0,25">
+                                    <Image x:Name="imgMain" Source="{Binding Image}" WidthRequest="100" HeightRequest="250" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+
+                                    
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                <!--</CarouselView>-->
+            </StackLayout>
+         </Grid>
+    </ContentPage.Content>
+</ContentPage>

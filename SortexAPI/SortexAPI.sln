@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortexAPI", "SortexAPI.csproj", "{8CA5956A-9E82-4F23-994C-8C98E5277EB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CA5956A-9E82-4F23-994C-8C98E5277EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA5956A-9E82-4F23-994C-8C98E5277EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA5956A-9E82-4F23-994C-8C98E5277EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA5956A-9E82-4F23-994C-8C98E5277EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53C72BBA-E486-4130-80F5-3AB8225697CE}
+	EndGlobalSection
+EndGlobal

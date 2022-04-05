@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SortexAdminV._1.Models.Brand>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="jumbotron">
+    <div class="text-center">
+        <img src="~/icons/brandicon.png" alt="BrandIcon" class="img-top" />
+    </div>
+    <p class="lead">Här kan du se, skapa, ändra eller ta bort alla era märken!</p>
+    <p class="line"></p>
+    <p>Genom att klicka på knappen nedan kan du skapa ett nytt märke. Du kan fylla i valfri tillverkare, klassificering, kön samt ladda upp ett valfritt antal tillhörande bilder.</p>
+    <p>Du kommer också kunna lägga till ett antal sökbara taggar till märket, tänk på att tillverkare, klassificering och kön automatiskt läggs till!</p>
+    <p class="line"></p>
+    <a class="btn btn-primary" asp-action="Create">Skapa ny</a>
+    <p />
+    <p class="line"></p>
+    <p>Skriv in valfri tagg och klicka på sök för att hitta ett märke!</p>
+    <form class="form-inline" asp-controller="Brands" asp-action="Index" method="get">
+        <div class="form-group">
+            <input type="text" id="searchTag" name="searchTag">
+            <button type="submit" class="btn btn-primary m-2">Sök</button>
+        </div>
+    </form>
+    <p class="line"></p>
+</div>
+
+
+<div class="container text-center">
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <div class="card" style="width: 18rem;">
+                <h4 class="card-img-top text-center text-black font-weight-bold pt-2 pb-1">@item.Manufacturer</h4>
+                <div class="card-body border-light">
+                    <h5 class="card-title">Kön</h5>
+                    <p class="card-text">@item.Gender</p>
+                    <p class="line"></p>
+                    <h5 class="card-title">Klassificering</h5>
+                    <p class="card-text">@item.Classification</p>
+                    <p class="line"></p>
+                    <a class="btn btn-primary " asp-action="Edit" asp-route-id="@item.Id">Ändra</a>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Detaljer</a>
+                    <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+                </div>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <img class="h-25 w-25" src="~/icons/sortexiconblue.png" alt="Alternate Text" />
+</div>
+
+<div class="container text-center position-relative" style="margin: 0 auto;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/icons/ordericon.png" alt="OrderIcon">
+                <div class="card-body border-light">
+                    <h5 class="card-title">ORDER</h5>
+                    <p class="card-text">Hantera ordrar</p>
+                    <a class="btn btn-primary" asp-controller="Orders" asp-action="Index">Order</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/icons/brandicon.png" alt="BrandIcon">
+                <div class="card-body border-light">
+                    <h5 class="card-title">MÄRKEN</h5>
+                    <p class="card-text">Hantera märken.</p>
+                    <a class="btn btn-primary" asp-controller="Brands" asp-action="Index">Märken</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/icons/trendicon.png" alt="TrendIcon">
+                <div class="card-body border-light">
+                    <h5 class="card-title">TRENDER</h5>
+                    <p class="card-text">Hantera trender.</p>
+                    <a class="btn btn-primary" asp-controller="Trends" asp-action="Index">Trender</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/icons/modeboardicon.png" alt="ModeboardIcon">
+                <div class="card-body border-light">
+                    <h5 class="card-title">MOODBOARDS</h5>
+                    <p class="card-text">Hantera moodboards.</p>
+                    <a class="btn btn-primary" asp-controller="Modeboards" asp-action="Index">Moodboards</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/icons/assignmenticon.png" alt="AssignmentIcon">
+                <div class="card-body border-light">
+                    <h5 class="card-title">ATT TÄNKA PÅ</h5>
+                    <p class="card-text">Hantera att att tänka på.</p>
+                    <a class="btn btn-primary" asp-controller="Assignments" asp-action="Index">Att tänka på</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/icons/fractionicon.png" alt="FractionIcon">
+                <div class="card-body border-light">
+                    <h5 class="card-title">FRAKTIONER</h5>
+                    <p class="card-text">Hantera fraktioner.</p>
+                    <a class="btn btn-primary" asp-controller="Fractions" asp-action="Index">Fraktioner</a>
+                </div>
+            </div>
+       
+</div>
+    

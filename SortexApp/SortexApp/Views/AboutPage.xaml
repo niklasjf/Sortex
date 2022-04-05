@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SortexApp.Views.AboutPage"
+             xmlns:local="clr-namespace:SortexApp.Views"
+             xmlns:vm="clr-namespace:SortexApp.ViewModels"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             Title="{Binding Title}">
+
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+   
+
+    <Grid BackgroundColor="{StaticResource Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="sortexiconblue.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"
+                            Margin="0,20,20,0"
+                            Text="Fraktioner"
+                            x:Name="btnFraction"
+                            Clicked="BtnFraction_Clicked"
+                            Routing.Route="FractionPage"
+                            CornerRadius="10"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" 
+                            WidthRequest="270"
+                            HeightRequest="130"
+                             ImageSource="fractionicon.png"
+                            />
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"
+                            Margin="0,20,0,0"
+                            x:Name="btnOrder"
+                            Text="Order"
+                            Clicked="BtnOrder_Clicked"
+                            Routing.Route="OrderPage"
+                            CornerRadius="10" 
+                            BackgroundColor="{StaticResource Primary}"                            
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="ordericon.png"
+                            />
+                </StackLayout>
+
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"
+                            Margin="0,20,20,0"
+                            Text="Trender"
+                            CornerRadius="10"
+                            Clicked="BtnTrend_Clicked"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="trendicon.png"/>
+                    <Button BorderWidth="5" BorderColor="{StaticResource Accent}"
+                            Margin="0,20,0,0" 
+                            Text="MoodBoard"
+                            CornerRadius="10" 
+                            Clicked="BtnMoodboard_Clicked"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="modeboardicon.png"
+                        />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Button BorderWidth="5"
+                            BorderColor="{StaticResource Accent}" 
+                            Margin="0,20,20,0" 
+                            Text="Märken" 
+                            CornerRadius="10"
+                            BackgroundColor="{StaticResource Primary}"
+                            Clicked="BtnBrands_Clicked"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="brandicon.png"/>
+                    <Button BorderWidth="5" 
+                            BorderColor="{StaticResource Accent}"
+                            Margin="0,20,0,0"
+                            Text="Att tänka på" 
+                            CornerRadius="10"
+                            Clicked="BtnAssignment_Clicked"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            WidthRequest="270"
+                            HeightRequest="130"
+                            ImageSource="assignmenticon.png"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
